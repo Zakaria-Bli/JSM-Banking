@@ -7,6 +7,8 @@ import React from "react"
 export default async function Home() {
   const loggedIn = await getLoggedInUser()
 
+  console.log(loggedIn)
+
   return (
     <section className="home">
       <div className="home-content">
@@ -14,7 +16,7 @@ export default async function Home() {
           <HeaderBox
             type="greeting"
             title="Welcome"
-            user={loggedIn?.name || "Guest"}
+            user={`${loggedIn?.firstName} ${loggedIn?.lastName}` || "Guest"}
             subtext="Access and manage your account and transactions efficiently."
           />
 
